@@ -1,0 +1,28 @@
+# Training Configuration
+model:
+  name: "Qwen/Qwen2.5-1.5B"
+  dtype: "bfloat16"
+  use_flash_attention: true
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  num_epochs: 1
+  max_seq_length: 1024
+  warmup_ratio: 0.03
+  weight_decay: 0.01
+  logging_steps: 10
+  save_steps: 500
+
+eval:
+  batch_size: 8
+  max_new_tokens: 256
+  temperature: 0.0
+  num_samples: -1  # -1 = all samples

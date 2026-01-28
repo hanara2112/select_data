@@ -1,0 +1,21 @@
+# Requirements for Data Selection Pipeline
+
+# Core ML
+# torch>=2.0.0
+# transformers>=4.36.0
+datasets>=2.14.0
+# accelerate>=0.24.0
+
+# LoRA/PEFT
+# peft>=0.7.0
+
+# Quantization
+# bitsandbytes>=0.41.0
+
+# Embeddings
+# sentence-transformers>=2.2.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+numpy>=1.24.0
